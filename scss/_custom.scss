@@ -1,0 +1,36 @@
+// Button customization
+.btn-primary{
+    color: #636057;
+    &:hover,&:active,&:focus{
+    background-color: #FF785E;
+    color: #ffffff;
+    }
+}
+.btn-outline-secondary{
+    color:#858377;
+    &:hover,&:active,&:focus{
+      color: #858377;
+      border-color: #ffdf65;
+      background-color: #ffdf65;
+      &>svg{
+        color: #FF785E;
+      }
+    }
+}
+// .btn-primary:active{
+//     background-color: #FF785E;
+//     color: #ffffff;
+// }
+// .btn-primary:focus{
+//     background-color: #FF785E;
+//     color: #ffffff;
+// }
+// .btn-outline-secondary:hover{
+//     color: #ffffff;
+// }
+// .btn-outline-secondary:active{
+//     color: #ffffff;
+// }
+// .btn-outline-secondary:focus{
+//     color: #ffffff;
+// }

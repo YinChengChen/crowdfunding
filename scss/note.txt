@@ -1,0 +1,29 @@
+1. color:
+#ffdf65 primary
+  primary
+#f8f9fa light
+  bg-line-color
+#636057 info
+  words, small-text-tag, countdown-text, setense, yellow-button-words, sub-tags
+#858377 secondary
+  sign up button, badge, follow-project button, share-button, connection-button, facebook-icon, youtube-icon, donated-badge-text
+  limited-badge-bg, sidebar-setense
+#494846 dark
+  h1,h2-price, h2-number, article-setense, donated-project-word, footer-bg, h3-address, h3-select-one-project
+#000027
+  small-price-tags
+#373A3C
+  form-word, h4-have-one-project, sidebar-setense
+#F7F7F7
+  input-bg
+#999999
+  input-place-aria
+#e5e5e5
+  sidebar-border
+#e8e8db
+  donated-badge-bg, sidebar-project-border
+#000029
+  limited-badge-number
+##DEE2E6
+  model-line
+
