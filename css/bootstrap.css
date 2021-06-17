@@ -7421,6 +7421,14 @@ fieldset:disabled .btn {
   top: 10% !important;
 }
 
+.top-15 {
+  top: 15% !important;
+}
+
+.top-20 {
+  top: 20% !important;
+}
+
 .top-50 {
   top: 50% !important;
 }
@@ -7435,6 +7443,14 @@ fieldset:disabled .btn {
 
 .bottom-10 {
   bottom: 10% !important;
+}
+
+.bottom-15 {
+  bottom: 15% !important;
+}
+
+.bottom-20 {
+  bottom: 20% !important;
 }
 
 .bottom-50 {
@@ -7453,6 +7469,14 @@ fieldset:disabled .btn {
   left: 10% !important;
 }
 
+.start-15 {
+  left: 15% !important;
+}
+
+.start-20 {
+  left: 20% !important;
+}
+
 .start-50 {
   left: 50% !important;
 }
@@ -7467,6 +7491,14 @@ fieldset:disabled .btn {
 
 .end-10 {
   right: 10% !important;
+}
+
+.end-15 {
+  right: 15% !important;
+}
+
+.end-20 {
+  right: 20% !important;
 }
 
 .end-50 {

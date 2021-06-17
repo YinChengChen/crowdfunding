@@ -81,7 +81,6 @@ navbarElement.addEventListener("click", function (e) {
 
 function setTags(nodePages) {
     var articleNode = document.getElementById("content");
-    // articleNode.innerHTML = "";
     var nodeListString = "";
     if (nodePages === "1") {
         articles.forEach(function(item){
@@ -90,9 +89,19 @@ function setTags(nodePages) {
                 '<p class="text-secondary lh-lg">' + item.text +'</p>';
             nodeListString = nodeListString + nodeString;
         });
-        articleNode.innerHTML = nodeListString;
     } else if (nodePages == "2") {
-        console.log("b");
+        var listString = "";
+        questions.forEach(function(item, index){
+            var qIndex = index + 1;
+            var nodeString = '<li class="accordion-item border-gray-500 drop-shadow-1"><p class="accordion-header" id="panelsStayOpen-heading' + qIndex +'">' +
+                '<button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse' + qIndex + '" aria-expanded="false"' + 
+                ' aria-controls="panelsStayOpen-collapse' + qIndex + '"><span class="badge pt-2 bg-primary text-info font-baloo-tamma2 fs-7">Q' + qIndex + '</span>' +
+                '<p class="ps-2 m-0 text-body flex-fill fs-7">' + item.question + '</p></button></p>' +
+                '<div id="panelsStayOpen-collapse' + qIndex + '" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading' + qIndex + '">' +
+                '<p class="ps-7 m-0 accordion-body fs-7 text-secondary border-top border-gray-500">' + item.answer + '</p></div></li>';
+            listString = listString + nodeString;
+        });
+        nodeListString = '<ul class="list-unstyled d-grid gap-3 accordion" id="accordionPanelsStayOpenExample">' + listString + '</ul>';
     } else if (nodePages == "3") {
         console.log("c");
         articleNode.innerHTML = "";
@@ -100,5 +109,6 @@ function setTags(nodePages) {
         console.log("d");
         articleNode.innerHTML = "";
     }
+    articleNode.innerHTML = nodeListString;
 }
 
