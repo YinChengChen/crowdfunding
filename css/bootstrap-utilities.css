@@ -59,11 +59,11 @@
 }
 
 .link-light {
-  color: #F7F7F7;
+  color: #F8F9FA;
 }
 
 .link-light:hover, .link-light:focus {
-  color: #f9f9f9;
+  color: #f9fafb;
 }
 
 .link-dark {
@@ -520,7 +520,7 @@
 }
 
 .border-light {
-  border-color: #F7F7F7 !important;
+  border-color: #F8F9FA !important;
 }
 
 .border-dark {
@@ -1572,7 +1572,7 @@
 }
 
 .text-light {
-  color: #F7F7F7 !important;
+  color: #F8F9FA !important;
 }
 
 .text-dark {
@@ -1632,7 +1632,7 @@
 }
 
 .bg-light {
-  background-color: #F7F7F7 !important;
+  background-color: #F8F9FA !important;
 }
 
 .bg-dark {
