@@ -43,7 +43,27 @@ var questions = [
 
     }
 ];
-
+var progress = [
+    {
+        "img-url": "https://hexschool.github.io/boootstrap5WebLayout/assets/news01.jpg",
+        "title": "高雄體驗會｜免費參加送帆布袋",
+        "date": "2021-6-20",
+        "intro": "大家安安！謝謝每位贊助者的熱情支持，讓我們離夢想更進一步，我們將於下個月舉辦體驗會，歡迎各位踴躍參與！",
+        "link": "#"
+    },{
+        "img-url": "https://hexschool.github.io/boootstrap5WebLayout/assets/news02.jpg",
+        "title": "高雄體驗會｜免費參加送帆布袋",
+        "date": "2021-6-20",
+        "intro": "大家安安！謝謝每位贊助者的熱情支持，讓我們離夢想更進一步，我們將於下個月舉辦體驗會，歡迎各位踴躍參與！",
+        "link": "#"
+    },{
+        "img-url": "https://hexschool.github.io/boootstrap5WebLayout/assets/news03.jpg",
+        "title": "高雄體驗會｜免費參加送帆布袋",
+        "date": "2021-6-20",
+        "intro": "大家安安！謝謝每位贊助者的熱情支持，讓我們離夢想更進一步，我們將於下個月舉辦體驗會，歡迎各位踴躍參與！",
+        "link": "#"
+    }
+];
 var navbarElement = document.getElementById("project");
 navbarElement.addEventListener("click", function (e) {
     if (e.target.nodeName !== "A") {
@@ -103,11 +123,19 @@ function setTags(nodePages) {
         });
         nodeListString = '<ul class="list-unstyled d-grid gap-3 accordion" id="accordionPanelsStayOpenExample">' + listString + '</ul>';
     } else if (nodePages == "3") {
-        console.log("c");
-        articleNode.innerHTML = "";
+        var listString = "";
+        progress.forEach(function(item){
+            var nodeString = '<li class="card flex-row border-0"><img class="w-50" src="' + item["img-url"] + '" alt="手持照片">' +
+            '<div class="card-body border border-start-0 border-gray-500 rounded-end">' +
+            '<h5 class="card-title fw-bold">' + item.title + '</h5>' +
+            '<h6 class="card-subtitle text-secondary font-baloo-tamma2">' + item.date + '</h6>' +
+            '<p class="card-text pt-3 text-secondary fs-7">' + item.intro + '</p>' +
+            '<a href="' + item.link + '" class="card-link text-danger font-baloo-tamma2 fw-bold fs-7">MORE</a>' + '</div></li>';
+            listString = listString + nodeString;
+        });
+        nodeListString = '<ul class="list-unstyled d-grid gap-3">' + listString + '</ul>';
     } else if (nodePages == "4") {
         console.log("d");
-        articleNode.innerHTML = "";
     }
     articleNode.innerHTML = nodeListString;
 }
