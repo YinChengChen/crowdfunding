@@ -92,12 +92,7 @@ function setTags(nodePages) {
         });
         articleNode.innerHTML = nodeListString;
     } else if (nodePages == "2") {
-        // questions.forEach(function (item, index) {
-        //     var qIndex = index + 1;
-        //     var nodeString = "";
-        //     nodeListString = nodeListString + nodeString;
-        // });
-        // contentNode.innerHTML = nodeListString;
+        console.log("b");
     } else if (nodePages == "3") {
         console.log("c");
         articleNode.innerHTML = "";
