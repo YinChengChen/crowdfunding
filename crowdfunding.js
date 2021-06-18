@@ -129,6 +129,8 @@ navbarElement.addEventListener("click", function (e) {
         });
 })();
 
+
+
 function setTags(nodePages) {
     var articleNode = document.getElementById("content");
     var nodeListString = "";
@@ -158,7 +160,7 @@ function setTags(nodePages) {
             '<div class="card-body border border-start-0 border-gray-500 rounded-end">' +
             '<h5 class="card-title fw-bold">' + item.title + '</h5>' +
             '<h6 class="card-subtitle text-secondary font-baloo-tamma2">' + item.date + '</h6>' +
-            '<p class="card-text pt-3 text-secondary fs-7">' + item.intro + '</p>' +
+            '<p class="d-none d-md-block card-text pt-3 text-secondary fs-7">' + item.intro + '</p>' +
             '<a href="' + item.link + '" class="card-link text-danger font-baloo-tamma2 fw-bold fs-7">MORE</a>' + '</div></li>';
             listString = listString + nodeString;
         });

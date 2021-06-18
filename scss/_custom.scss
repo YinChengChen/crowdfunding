@@ -17,10 +17,35 @@
       }
     }
 }
+
+// sticky
+.z-top{
+  z-index: $zindex-modal;
+}
+
 // before and after
 :target:before{
   content: "";
   display: block;
-  height: 80px;
-  visibility: hidden;
+  height: 120px;
+  // visibility: hidden;
 }
+@include media-breakpoint-up(lg) {
+  :target:before{
+    content: "";
+    display: block;
+    height: 80px;
+    // visibility: hidden;
+  }
+}
+// @include media-breakpoint-down(lg){
+//   .position-sticky{
+//     position: static;
+//   }
+// }
+// .anchor {
+//   display: block;
+//   position: relative;
+//   top: -250px;
+//   visibility: hidden;
+// }
