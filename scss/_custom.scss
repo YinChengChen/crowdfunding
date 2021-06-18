@@ -18,16 +18,9 @@
     }
 }
 // before and after
-.common-div article:before{
-  content:　'';
-  display: block;
-  margin-top: -50px;
-  height: 50px;
-  visibility: hidden;
-}
 :target:before{
   content: "";
   display: block;
-  height: 100px;
+  height: 80px;
   visibility: hidden;
 }
