@@ -64,12 +64,42 @@ var progress = [
         "link": "#"
     }
 ];
+var messages = [
+    {
+        "user-photo": "https://hexschool.github.io/boootstrap5WebLayout/assets/user_img01.jpg",
+        "username": "廖小杰",
+        "messages-date": "2020年5月22日 11:32",
+        "content": "晚上起床上廁所看到照片裡的人一直動其實有點恐怖，希望可以有暫停或是定時的功能！",
+        "if-reply": true,
+        "reply": "你要嘛起床的時候開燈，要嘛給我們更多錢開發阿"
+    }, {
+        "user-photo": "https://hexschool.github.io/boootstrap5WebLayout/assets/user_img02.jpg",
+        "username": "卡阿伯",
+        "messages-date": "2020年5月22日 11:32",
+        "content": "希望有更多花色可以選擇！我女兒最近喜歡綠色",
+        "if-reply": false,
+        "reply": ""
+    }, {
+        "user-photo": "https://hexschool.github.io/boootstrap5WebLayout/assets/user_img02.jpg",
+        "username": "賈師",
+        "messages-date": "2020年5月22日 11:32",
+        "content": "可以做個相簿功能嗎？拍出好看的影片再讓我們選擇要印出哪一張這樣",
+        "if-reply": false,
+        "reply": ""
+    }, {
+        "user-photo": "https://hexschool.github.io/boootstrap5WebLayout/assets/user_img02.jpg",
+        "username": "俊俊",
+        "messages-date": "2020年5月22日 11:32",
+        "content": "test123 看一下我是不是真的可以留言",
+        "if-reply": false,
+        "reply": ""
+    }
+];
 var navbarElement = document.getElementById("project");
 navbarElement.addEventListener("click", function (e) {
     if (e.target.nodeName !== "A") {
         return;
     } else {
-        //改變navbar
         var selectedNode = navbarElement.querySelector(".border-primary");
         var clickNode = e.target.parentNode;
         selectedNode.classList.remove("border-bottom", "border-primary", "border-3", "fw-bold");
@@ -102,6 +132,7 @@ navbarElement.addEventListener("click", function (e) {
 function setTags(nodePages) {
     var articleNode = document.getElementById("content");
     var nodeListString = "";
+    var listString = "";
     if (nodePages === "1") {
         articles.forEach(function(item){
             var nodeString = '<img class="img-fluid" src="' + item["img-url"] + '"alt = "' + item.alt +'" >' +
@@ -110,11 +141,10 @@ function setTags(nodePages) {
             nodeListString = nodeListString + nodeString;
         });
     } else if (nodePages == "2") {
-        var listString = "";
         questions.forEach(function(item, index){
             var qIndex = index + 1;
             var nodeString = '<li class="accordion-item border-gray-500 drop-shadow-1"><p class="accordion-header" id="panelsStayOpen-heading' + qIndex +'">' +
-                '<button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse' + qIndex + '" aria-expanded="false"' + 
+                '<button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse' + qIndex + '" aria-expanded="false"' +
                 ' aria-controls="panelsStayOpen-collapse' + qIndex + '"><span class="badge pt-2 bg-primary text-info font-baloo-tamma2 fs-7">Q' + qIndex + '</span>' +
                 '<p class="ps-2 m-0 text-body flex-fill fs-7">' + item.question + '</p></button></p>' +
                 '<div id="panelsStayOpen-collapse' + qIndex + '" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading' + qIndex + '">' +
@@ -123,7 +153,6 @@ function setTags(nodePages) {
         });
         nodeListString = '<ul class="list-unstyled d-grid gap-3 accordion" id="accordionPanelsStayOpenExample">' + listString + '</ul>';
     } else if (nodePages == "3") {
-        var listString = "";
         progress.forEach(function(item){
             var nodeString = '<li class="card flex-row border-0"><img class="w-50" src="' + item["img-url"] + '" alt="手持照片">' +
             '<div class="card-body border border-start-0 border-gray-500 rounded-end">' +
@@ -135,7 +164,19 @@ function setTags(nodePages) {
         });
         nodeListString = '<ul class="list-unstyled d-grid gap-3">' + listString + '</ul>';
     } else if (nodePages == "4") {
-        console.log("d");
+        messages.forEach(function(item){
+            var replyNodeString = "";
+            if(item["if-reply"]){
+                replyNodeString = '<div class="bg-light m-3 p-3"><h6 class="text-danger" >提案者回覆</h6>' +
+                        '<p class="text-success ls-1 m-0">' + item.reply +'</p></div>';
+            }
+            var nodeString = '<li class="card"><div class="d-flex mt-3 ms-3 me-3"><img src="' + item["user-photo"] + '" alt="使用者照片">' +
+                '<div class="ms-3"><h3 class="card-title">' + item.username +'</h3><h6 class="card-subtitle text-secondary">' + item["messages-date"] +
+                '</h6></div></div><div class="card-body"><p class="text-success ls-1">' + item.content +
+                '</p></div>' + replyNodeString +'</li>';
+            listString = listString + nodeString;
+        });
+        nodeListString = '<p class="p-3 border-start border-primary border-3 rounded-start fs-7 ls-1">只有本專案的贊助者才可以留言哦，如果有任何專案相關的問題，歡迎<span><a class="link-danger" href="#">聯絡提案人</a></span>！</p><ul class="list-unstyled d-grid gap-3">' + listString + '</ul>';
     }
     articleNode.innerHTML = nodeListString;
 }
